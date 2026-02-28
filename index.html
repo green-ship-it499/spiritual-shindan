@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/usama/Downloads/spiritual-diagnosis_1.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>守護スピリチュアル診断</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--deep:#06041a;--purple:#7c3aed;--lavender:#a78bfa;--cyan:#67e8f9;--gold:#fbbf24;--text:#e8e0ff;--dim:#9d8fc4;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--deep);min-height:100vh;display:flex;justify-content:center;overflow-x:hidden;}
+.stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d) var(--delay) infinite;opacity:0;}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(0.5);}50%{opacity:var(--op,.8);transform:scale(1);}}
+.nebula{position:fixed;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0;}
+.n1{width:400px;height:400px;background:rgba(124,58,237,.18);top:-100px;left:-100px;animation:drift 12s ease-in-out infinite alternate;}
+.n2{width:350px;height:350px;background:rgba(103,232,249,.12);bottom:0;right:-80px;animation:drift 15s ease-in-out infinite alternate-reverse;}
+.n3{width:250px;height:250px;background:rgba(244,114,182,.1);top:40%;left:50%;transform:translate(-50%,-50%);animation:drift 10s ease-in-out infinite alternate;}
+@keyframes drift{0%{transform:translate(0,0);}100%{transform:translate(30px,20px);}}
+.wrap{width:100%;max-width:430px;min-height:100vh;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:50px 22px 70px;}
+.screen{width:100%;display:none;flex-direction:column;align-items:center;}
+.screen.active{display:flex;}
+
+/* CRYSTAL */
+.crystal-wrap{position:relative;width:160px;height:180px;margin-bottom:30px;}
+.crystal-ball{width:150px;height:150px;position:absolute;top:0;left:5px;border-radius:50%;background:radial-gradient(circle at 38% 35%,#ffffffcc 0%,#d0aaff88 20%,#7c3aed66 50%,#1a0550 80%,#06001a 100%);box-shadow:0 0 30px 8px rgba(124,58,237,.5),0 0 80px 20px rgba(103,232,249,.2),inset 0 0 30px rgba(0,0,30,.7);animation:cpulse 4s ease-in-out infinite;}
+.crystal-ball::before{content:'';position:absolute;width:40px;height:24px;background:radial-gradient(ellipse,rgba(255,255,255,.7),transparent);top:20px;left:30px;border-radius:50%;filter:blur(4px);}
+.crystal-ball::after{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,rgba(167,139,250,.15) 60deg,transparent 120deg,rgba(103,232,249,.1) 180deg,transparent 240deg,rgba(244,114,182,.1) 300deg,transparent 360deg);animation:spin 8s linear infinite;}
+.crystal-glow{position:absolute;width:160px;height:40px;background:radial-gradient(ellipse,rgba(124,58,237,.5),transparent 70%);bottom:10px;left:0;filter:blur(10px);animation:cpulse 4s ease-in-out infinite;}
+.crystal-stand{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:24px;background:linear-gradient(180deg,#b8860b,#5a3500);clip-path:polygon(10% 0%,90% 0%,100% 100%,0% 100%);box-shadow:0 4px 12px rgba(0,0,0,.5);}
+.crystal-stand::after{content:'';position:absolute;top:0;left:10%;width:80%;height:4px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.6),transparent);}
+@keyframes cpulse{0%,100%{box-shadow:0 0 30px 8px rgba(124,58,237,.5),0 0 80px 20px rgba(103,232,249,.2),inset 0 0 30px rgba(0,0,30,.7);}50%{box-shadow:0 0 50px 15px rgba(124,58,237,.7),0 0 120px 30px rgba(103,232,249,.35),inset 0 0 40px rgba(0,0,30,.8);}}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* TITLES */
+.title-main{font-size:27px;font-weight:900;text-align:center;background:linear-gradient(135deg,#c4b5fd,#67e8f9,#f9a8d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 12px rgba(167,139,250,.6));margin-bottom:10px;}
+.title-sub{font-size:13px;color:var(--dim);letter-spacing:2px;margin-bottom:36px;text-align:center;}
+.glass-card{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(167,139,250,.22);border-radius:20px;padding:26px 22px;margin-bottom:36px;position:relative;overflow:hidden;}
+.glass-card::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.6),transparent);}
+.intro-text{font-size:14px;line-height:2;color:var(--text);text-align:center;}
+.intro-text em{color:var(--lavender);font-style:normal;font-weight:700;}
+.type-count{display:inline-block;background:linear-gradient(135deg,rgba(124,58,237,.3),rgba(103,232,249,.15));border:1px solid rgba(167,139,250,.4);border-radius:20px;padding:6px 18px;font-size:13px;font-weight:700;color:var(--lavender);margin:12px 0;letter-spacing:1px;}
+.divider{display:flex;align-items:center;gap:10px;margin:20px 0;width:100%;}
+.divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.4),transparent);}
+.divider-gem{color:var(--lavender);}
+.btn-start{position:relative;background:linear-gradient(135deg,#5b21b6,#7c3aed,#6d28d9);color:white;border:none;border-radius:50px;padding:18px 56px;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:2px;overflow:hidden;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 30px rgba(124,58,237,.55),0 0 0 1px rgba(167,139,250,.3);}
+.btn-start::after{content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:rgba(255,255,255,.12);transform:skewX(-20deg);animation:shimmer 3s infinite;}
+@keyframes shimmer{0%{left:-60%;}100%{left:140%;}}
+.btn-start:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(124,58,237,.7);}
+.rune{position:absolute;opacity:.12;animation:rfloat var(--d) ease-in-out infinite alternate;pointer-events:none;}
+@keyframes rfloat{0%{transform:translateY(0) rotate(0deg);opacity:.08;}100%{transform:translateY(-15px) rotate(10deg);opacity:.18;}}
+
+/* PROGRESS */
+.progress-track{width:100%;height:3px;background:rgba(255,255,255,.07);border-radius:3px;margin-bottom:14px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#a78bfa,#67e8f9);border-radius:3px;transition:width .5s cubic-bezier(.4,0,.2,1);box-shadow:0 0 8px rgba(167,139,250,.6);}
+.q-label{font-size:12px;letter-spacing:2px;color:var(--dim);margin-bottom:28px;}
+.q-card{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(167,139,250,.18);border-radius:24px;padding:32px 22px 26px;position:relative;overflow:hidden;}
+.q-card::before{content:'';position:absolute;top:-1px;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.5),transparent);}
+.q-card::after{content:'';position:absolute;bottom:-1px;left:30%;right:30%;height:1px;background:linear-gradient(90deg,transparent,rgba(103,232,249,.3),transparent);}
+.q-icon{font-size:28px;text-align:center;margin-bottom:14px;}
+.q-text{font-size:18px;font-weight:700;line-height:1.65;color:#f0ebff;text-align:center;margin-bottom:28px;}
+.opt-btn{display:flex;align-items:center;gap:14px;width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(167,139,250,.2);border-radius:60px;padding:15px 22px;font-size:14px;color:var(--text);cursor:pointer;margin-bottom:12px;transition:all .22s;position:relative;overflow:hidden;}
+.opt-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(124,58,237,0),rgba(124,58,237,.12));opacity:0;transition:opacity .22s;border-radius:60px;}
+.opt-gem{width:22px;height:22px;min-width:22px;border-radius:50%;border:1px solid rgba(167,139,250,.4);display:flex;align-items:center;justify-content:center;font-size:10px;background:rgba(124,58,237,.15);transition:all .22s;}
+.opt-btn:hover{border-color:rgba(167,139,250,.55);transform:translateX(5px);}
+.opt-btn:hover::before{opacity:1;}
+.opt-btn:hover .opt-gem{background:rgba(124,58,237,.4);border-color:var(--lavender);box-shadow:0 0 10px rgba(167,139,250,.4);}
+.opt-btn:last-child{margin-bottom:0;}
+.opt-text{font-size:14px;font-weight:500;}
+
+/* RESULT */
+.result-crystal{width:130px;height:130px;border-radius:50%;background:radial-gradient(circle at 38% 35%,#ffffffaa 0%,#d0aaff66 20%,var(--c1,#7c3aed) 50%,var(--c2,#1a0550) 80%,#06001a 100%);box-shadow:0 0 40px 10px var(--glow,rgba(124,58,237,.6)),0 0 100px 30px var(--glow2,rgba(103,232,249,.15)),inset 0 0 30px rgba(0,0,20,.7);display:flex;align-items:center;justify-content:center;font-size:52px;margin-bottom:16px;animation:cpulse 4s ease-in-out infinite;position:relative;}
+.result-crystal::before{content:'';position:absolute;width:30px;height:18px;background:radial-gradient(ellipse,rgba(255,255,255,.55),transparent);top:18px;left:24px;border-radius:50%;filter:blur(3px);}
+.result-badge{font-size:11px;letter-spacing:3px;font-weight:700;color:var(--gold);margin-bottom:6px;filter:drop-shadow(0 0 8px rgba(251,191,36,.5));}
+.result-name{font-size:26px;font-weight:900;background:linear-gradient(135deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;text-align:center;line-height:1.4;}
+.result-fullname{font-size:13px;color:var(--dim);letter-spacing:1px;margin-bottom:24px;text-align:center;}
+
+/* TYPE ID BADGE */
+.type-id-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(167,139,250,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;}
+.type-id-label{font-size:10px;color:var(--dim);letter-spacing:1px;}
+.type-id-value{font-size:12px;font-weight:700;color:var(--lavender);}
+
+/* AXIS CARDS */
+.axis-row{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;}
+.axis-card{background:rgba(255,255,255,.05);border:1px solid rgba(167,139,250,.18);border-radius:16px;padding:14px 10px;text-align:center;position:relative;overflow:hidden;}
+.axis-card::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.5),transparent);}
+.axis-icon{font-size:16px;margin-bottom:5px;}
+.axis-label{font-size:9px;color:var(--dim);letter-spacing:1px;margin-bottom:3px;}
+.axis-value{font-size:12px;font-weight:700;color:#f0ebff;line-height:1.3;}
+
+.stat-grid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(167,139,250,.18);border-radius:16px;padding:14px 10px;text-align:center;position:relative;overflow:hidden;}
+.stat-card::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.5),transparent);}
+.stat-icon{font-size:16px;margin-bottom:5px;}
+.stat-label{font-size:9px;color:var(--dim);letter-spacing:1px;margin-bottom:3px;}
+.stat-value{font-size:12px;font-weight:700;color:#f0ebff;line-height:1.3;}
+
+.result-desc{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(167,139,250,.18);border-radius:20px;padding:22px;font-size:14px;line-height:1.9;color:#d4caff;margin-bottom:14px;position:relative;overflow:hidden;}
+.result-desc::before{content:'"';position:absolute;top:-10px;left:14px;font-size:60px;color:rgba(167,139,250,.12);font-family:serif;line-height:1;}
+.result-desc-title{font-size:11px;color:var(--lavender);letter-spacing:2px;margin-bottom:8px;font-weight:700;}
+
+.msg-card{width:100%;background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(103,232,249,.08));border:1px solid rgba(103,232,249,.25);border-radius:20px;padding:22px;margin-bottom:28px;text-align:center;}
+.msg-label{font-size:11px;letter-spacing:3px;color:#67e8f9;margin-bottom:10px;font-weight:700;}
+.msg-text{font-size:14px;line-height:1.9;color:#e0f7ff;}
+
+.btn-retry{background:rgba(255,255,255,.06);border:1px solid rgba(167,139,250,.35);color:var(--lavender);border-radius:50px;padding:14px 44px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:1px;}
+.btn-retry:hover{background:rgba(124,58,237,.25);border-color:var(--lavender);box-shadow:0 0 20px rgba(124,58,237,.3);}
+.footer{font-size:11px;color:rgba(255,255,255,.15);margin-top:36px;letter-spacing:1px;}
+.fade-in{animation:fadeIn .5s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+<div class="stars-bg" id="stars-bg"><div class="star" style="width: 0.926377px; height: 0.926377px; top: 57.2232%; left: 16.8613%; --d: 3.125363784209159s; --delay: 4.998448820619229s; --op: 0.6812681893707497;"></div><div class="star" style="width: 1.84999px; height: 1.84999px; top: 66.3538%; left: 18.1114%; --d: 4.6176733394347185s; --delay: 2.1458650140607554s; --op: 0.6915898474916342;"></div><div class="star" style="width: 0.702211px; height: 0.702211px; top: 24.8631%; left: 1.5923%; --d: 2.6416544968940756s; --delay: 1.6912190731413523s; --op: 0.46664659009479176;"></div><div class="star" style="width: 1.21488px; height: 1.21488px; top: 11.0812%; left: 21.3034%; --d: 5.578155872022085s; --delay: 1.0740564628542648s; --op: 0.7699842931548475;"></div><div class="star" style="width: 0.840114px; height: 0.840114px; top: 0.315863%; left: 19.8738%; --d: 4.947305190985217s; --delay: 1.0940562467697528s; --op: 0.5842834867116564;"></div><div class="star" style="width: 1.47684px; height: 1.47684px; top: 86.4432%; left: 17.137%; --d: 3.493077879740907s; --delay: 1.9672842948840135s; --op: 0.9137144275675867;"></div><div class="star" style="width: 2.24158px; height: 2.24158px; top: 8.82425%; left: 61.3939%; --d: 5.759227529891337s; --delay: 3.1747439474373835s; --op: 0.40149700299889257;"></div><div class="star" style="width: 2.20553px; height: 2.20553px; top: 56.6735%; left: 95.4874%; --d: 5.613137904620234s; --delay: 1.66480053058079s; --op: 0.7900777378523631;"></div><div class="star" style="width: 2.40732px; height: 2.40732px; top: 84.4923%; left: 9.45498%; --d: 3.324807992308446s; --delay: 4.847046834600571s; --op: 0.8382808904088499;"></div><div class="star" style="width: 1.7591px; height: 1.7591px; top: 17.6509%; left: 30.1103%; --d: 3.0431414202261173s; --delay: 1.9847890671321433s; --op: 0.8120211015234149;"></div><div class="star" style="width: 1.27726px; height: 1.27726px; top: 22.3161%; left: 30.9238%; --d: 6.4657744784730244s; --delay: 1.3933404065234634s; --op: 0.7824153874550777;"></div><div class="star" style="width: 0.560822px; height: 0.560822px; top: 40.7322%; left: 88.0072%; --d: 6.1468515510830075s; --delay: 1.6203876584896382s; --op: 0.6586126516448902;"></div><div class="star" style="width: 2.21034px; height: 2.21034px; top: 51.4609%; left: 30.061%; --d: 6.7465865880013585s; --delay: 2.9658007299444566s; --op: 0.5930800281502955;"></div><div class="star" style="width: 1.04112px; height: 1.04112px; top: 62.7102%; left: 25.9657%; --d: 2.9822991109488948s; --delay: 2.605355405997991s; --op: 0.9821692693559837;"></div><div class="star" style="width: 1.66987px; height: 1.66987px; top: 76.879%; left: 39.9696%; --d: 2.073608536679613s; --delay: 0.9345790153830619s; --op: 0.8116103995002163;"></div><div class="star" style="width: 2.45738px; height: 2.45738px; top: 29.7077%; left: 53.4626%; --d: 2.5033952673876807s; --delay: 2.704127419070985s; --op: 0.7457030588597242;"></div><div class="star" style="width: 0.928072px; height: 0.928072px; top: 6.63312%; left: 48.8839%; --d: 5.239319776324788s; --delay: 3.089241065240818s; --op: 0.6807655928664091;"></div><div class="star" style="width: 0.51626px; height: 0.51626px; top: 76.8676%; left: 58.1415%; --d: 2.6589790003437885s; --delay: 0.8221498951538059s; --op: 0.9899641711240452;"></div><div class="star" style="width: 0.588588px; height: 0.588588px; top: 54.1212%; left: 21.4159%; --d: 3.481579767034071s; --delay: 3.7177662701533656s; --op: 0.51308026958609;"></div><div class="star" style="width: 0.532732px; height: 0.532732px; top: 50.5231%; left: 5.72675%; --d: 6.874610594106591s; --delay: 0.12124293321720159s; --op: 0.43863895858930096;"></div><div class="star" style="width: 0.615292px; height: 0.615292px; top: 90.8839%; left: 96.9066%; --d: 3.3644130375236947s; --delay: 2.8077568155145816s; --op: 0.5977758616716936;"></div><div class="star" style="width: 1.95814px; height: 1.95814px; top: 27.8515%; left: 88.8213%; --d: 4.4698116735719156s; --delay: 4.618373334703653s; --op: 0.7620291759528781;"></div><div class="star" style="width: 2.23193px; height: 2.23193px; top: 55.2263%; left: 81.7255%; --d: 2.649239507118296s; --delay: 3.4368052332419645s; --op: 0.6684225399427737;"></div><div class="star" style="width: 0.667075px; height: 0.667075px; top: 49.3629%; left: 15.1691%; --d: 2.4929741874417264s; --delay: 2.2519466352836437s; --op: 0.6027923114213185;"></div><div class="star" style="width: 1.42144px; height: 1.42144px; top: 84.3392%; left: 49.9161%; --d: 6.006007228336081s; --delay: 0.3016547803551811s; --op: 0.697338371483526;"></div><div class="star" style="width: 1.41604px; height: 1.41604px; top: 16.5199%; left: 33.1993%; --d: 4.411337832934404s; --delay: 0.6836235535557694s; --op: 0.7069323017951793;"></div><div class="star" style="width: 1.57271px; height: 1.57271px; top: 16.3438%; left: 7.01156%; --d: 4.505605612318629s; --delay: 0.32718739837965694s; --op: 0.4723088107851756;"></div><div class="star" style="width: 2.11126px; height: 2.11126px; top: 37.1473%; left: 67.5978%; --d: 2.882574242535188s; --delay: 4.59691968577839s; --op: 0.9230430348747221;"></div><div class="star" style="width: 2.45234px; height: 2.45234px; top: 65.0435%; left: 30.4474%; --d: 6.730826209228634s; --delay: 1.2295875566025816s; --op: 0.5246978354258552;"></div><div class="star" style="width: 2.38376px; height: 2.38376px; top: 80.1247%; left: 84.1226%; --d: 3.4245362552694782s; --delay: 1.5748432722926147s; --op: 0.5864528105294387;"></div><div class="star" style="width: 1.27674px; height: 1.27674px; top: 54.4684%; left: 57.2135%; --d: 6.8771452570755915s; --delay: 2.594819040125202s; --op: 0.5103611229399287;"></div><div class="star" style="width: 2.08022px; height: 2.08022px; top: 49.2502%; left: 69.8527%; --d: 6.109570002574455s; --delay: 1.3727558876756507s; --op: 0.5539368250707986;"></div><div class="star" style="width: 0.676368px; height: 0.676368px; top: 7.47421%; left: 47.0415%; --d: 3.1221455310675137s; --delay: 4.608078098320282s; --op: 0.6154205571195032;"></div><div class="star" style="width: 2.30126px; height: 2.30126px; top: 99.3765%; left: 5.87176%; --d: 5.970606782008206s; --delay: 3.2258599918962902s; --op: 0.6525945534664639;"></div><div class="star" style="width: 1.07769px; height: 1.07769px; top: 26.7031%; left: 49.364%; --d: 4.87936846384171s; --delay: 0.8904581716878585s; --op: 0.660144507494685;"></div><div class="star" style="width: 1.04404px; height: 1.04404px; top: 95.3122%; left: 47.8057%; --d: 6.290769523194742s; --delay: 0.8777373577770803s; --op: 0.4357940262146603;"></div><div class="star" style="width: 0.97996px; height: 0.97996px; top: 18.3372%; left: 59.5059%; --d: 6.063870703418698s; --delay: 3.5956028100575526s; --op: 0.9252681561438368;"></div><div class="star" style="width: 2.36877px; height: 2.36877px; top: 13.0057%; left: 95.3573%; --d: 4.665088944069268s; --delay: 3.173481565055579s; --op: 0.7309508650008385;"></div><div class="star" style="width: 1.40065px; height: 1.40065px; top: 95.9488%; left: 15.3327%; --d: 4.422878979870783s; --delay: 0.48691765373228946s; --op: 0.805789180171679;"></div><div class="star" style="width: 0.52892px; height: 0.52892px; top: 61.4333%; left: 6.25273%; --d: 2.0848330892921947s; --delay: 4.544868475535104s; --op: 0.44087728592091013;"></div><div class="star" style="width: 1.01217px; height: 1.01217px; top: 3.34179%; left: 78.9588%; --d: 4.32782585222088s; --delay: 4.274538650210887s; --op: 0.6936749348127695;"></div><div class="star" style="width: 1.69655px; height: 1.69655px; top: 35.3802%; left: 57.4741%; --d: 2.9269327086226826s; --delay: 1.8193553326575318s; --op: 0.817458475906983;"></div><div class="star" style="width: 0.786482px; height: 0.786482px; top: 81.763%; left: 36.8719%; --d: 6.856457309057969s; --delay: 0.6823468869542271s; --op: 0.8023475078362701;"></div><div class="star" style="width: 0.941802px; height: 0.941802px; top: 41.625%; left: 97.0257%; --d: 5.9698521829041145s; --delay: 3.0188624370377664s; --op: 0.5615903979548158;"></div><div class="star" style="width: 2.24811px; height: 2.24811px; top: 7.97136%; left: 36.6725%; --d: 5.732625522193863s; --delay: 1.7054841159576912s; --op: 0.43962583606900624;"></div><div class="star" style="width: 0.77451px; height: 0.77451px; top: 99.8823%; left: 49.4839%; --d: 4.945524993255608s; --delay: 1.5223390837482742s; --op: 0.7860796014976414;"></div><div class="star" style="width: 1.16682px; height: 1.16682px; top: 58.7112%; left: 24.7397%; --d: 5.415101163136969s; --delay: 3.6441328122145906s; --op: 0.8223662310530309;"></div><div class="star" style="width: 2.24397px; height: 2.24397px; top: 43.0283%; left: 37.7644%; --d: 6.508728414818858s; --delay: 4.528909098822295s; --op: 0.4618789794989525;"></div><div class="star" style="width: 1.67389px; height: 1.67389px; top: 52.7313%; left: 73.8466%; --d: 6.078192988531454s; --delay: 0.8649679447179209s; --op: 0.7575216025853898;"></div><div class="star" style="width: 1.24019px; height: 1.24019px; top: 67.4847%; left: 47.6832%; --d: 4.545758688149506s; --delay: 2.8827545032044606s; --op: 0.6110496251234555;"></div><div class="star" style="width: 1.06386px; height: 1.06386px; top: 73.3038%; left: 35.8339%; --d: 3.535235813145444s; --delay: 1.7220224962118174s; --op: 0.7757030323341929;"></div><div class="star" style="width: 0.50124px; height: 0.50124px; top: 57.1575%; left: 79.5393%; --d: 6.052297827566075s; --delay: 0.25950138848331805s; --op: 0.7447086913326653;"></div><div class="star" style="width: 1.48818px; height: 1.48818px; top: 26.6931%; left: 84.4439%; --d: 5.632780968404388s; --delay: 3.4194551006752514s; --op: 0.5314494309028523;"></div><div class="star" style="width: 1.81007px; height: 1.81007px; top: 77.6574%; left: 20.2212%; --d: 3.4548759887225486s; --delay: 3.8342373385871404s; --op: 0.5825030948837875;"></div><div class="star" style="width: 1.79987px; height: 1.79987px; top: 70.5577%; left: 16.8791%; --d: 4.955807519020627s; --delay: 1.2464792192537537s; --op: 0.4607749621615579;"></div><div class="star" style="width: 0.980285px; height: 0.980285px; top: 83.3186%; left: 59.4244%; --d: 6.247103988029102s; --delay: 0.34780722261875063s; --op: 0.600459282648671;"></div><div class="star" style="width: 1.96678px; height: 1.96678px; top: 55.5261%; left: 14.5465%; --d: 6.236397281787381s; --delay: 2.132873964783185s; --op: 0.678653968850875;"></div><div class="star" style="width: 0.693127px; height: 0.693127px; top: 2.03102%; left: 36.0791%; --d: 4.595429444418951s; --delay: 3.7794264149440777s; --op: 0.41020717916120675;"></div><div class="star" style="width: 0.792295px; height: 0.792295px; top: 87.4938%; left: 14.734%; --d: 6.165286211002646s; --delay: 1.2049761829765s; --op: 0.4051779502596461;"></div><div class="star" style="width: 1.98463px; height: 1.98463px; top: 11.1246%; left: 83.1491%; --d: 2.0296957957235886s; --delay: 1.5416722691390283s; --op: 0.9508982917121801;"></div><div class="star" style="width: 1.4901px; height: 1.4901px; top: 3.84618%; left: 27.5672%; --d: 4.433129701177213s; --delay: 1.5803342991266667s; --op: 0.6540132693781477;"></div><div class="star" style="width: 2.11998px; height: 2.11998px; top: 76.6733%; left: 11.479%; --d: 5.126841925520182s; --delay: 1.6352724632798266s; --op: 0.8061624770354925;"></div><div class="star" style="width: 1.18937px; height: 1.18937px; top: 3.38289%; left: 47.9366%; --d: 6.617431485283758s; --delay: 4.211796955137983s; --op: 0.9328113862325211;"></div><div class="star" style="width: 0.834338px; height: 0.834338px; top: 29.475%; left: 6.97867%; --d: 2.720738997971107s; --delay: 3.9534048424645194s; --op: 0.6107521225900528;"></div><div class="star" style="width: 0.967337px; height: 0.967337px; top: 50.4591%; left: 62.56%; --d: 2.3332847685164797s; --delay: 2.397853700424894s; --op: 0.5606320694597814;"></div><div class="star" style="width: 1.17838px; height: 1.17838px; top: 30.4382%; left: 65.6237%; --d: 2.0257150287672974s; --delay: 0.730547485768735s; --op: 0.9283826045843552;"></div><div class="star" style="width: 0.527525px; height: 0.527525px; top: 36.2765%; left: 97.406%; --d: 6.6249772990415625s; --delay: 0.26638391954259155s; --op: 0.6491857093259257;"></div><div class="star" style="width: 2.27471px; height: 2.27471px; top: 5.86948%; left: 3.95301%; --d: 5.6634500313567795s; --delay: 4.88384081222296s; --op: 0.5887974633363141;"></div><div class="star" style="width: 1.15127px; height: 1.15127px; top: 90.7171%; left: 57.4319%; --d: 4.6759202084853415s; --delay: 0.31730523729277926s; --op: 0.9169934478559388;"></div><div class="star" style="width: 0.901301px; height: 0.901301px; top: 98.2729%; left: 85.0386%; --d: 3.864065233545472s; --delay: 4.0852042740513035s; --op: 0.6323202074908647;"></div><div class="star" style="width: 2.19097px; height: 2.19097px; top: 4.32663%; left: 86.0504%; --d: 3.502610025267734s; --delay: 1.3666567505029203s; --op: 0.7195809440757364;"></div><div class="star" style="width: 0.514719px; height: 0.514719px; top: 34.6601%; left: 32.9057%; --d: 6.112263696860964s; --delay: 1.1878894188583655s; --op: 0.795277663846978;"></div><div class="star" style="width: 1.10833px; height: 1.10833px; top: 6.42849%; left: 29.3181%; --d: 4.089857565270997s; --delay: 3.0955991136195s; --op: 0.4717676930721705;"></div><div class="star" style="width: 1.89346px; height: 1.89346px; top: 35.7296%; left: 93.1907%; --d: 2.5211070742801773s; --delay: 3.615852419816898s; --op: 0.515127487154636;"></div><div class="star" style="width: 1.79166px; height: 1.79166px; top: 70.1552%; left: 26.4689%; --d: 2.2079567558775257s; --delay: 2.1121856488591466s; --op: 0.5451970251726405;"></div><div class="star" style="width: 0.963503px; height: 0.963503px; top: 12.2369%; left: 1.07485%; --d: 6.849836167658214s; --delay: 4.465222323639699s; --op: 0.9872404776740866;"></div><div class="star" style="width: 1.23978px; height: 1.23978px; top: 19.2629%; left: 50.1156%; --d: 5.4068761008264214s; --delay: 4.828233032152745s; --op: 0.9648495729984978;"></div><div class="star" style="width: 1.68773px; height: 1.68773px; top: 32.9682%; left: 25.3627%; --d: 2.8317984688334192s; --delay: 4.774645329869683s; --op: 0.4720403936099683;"></div><div class="star" style="width: 1.66677px; height: 1.66677px; top: 90.5713%; left: 28.7545%; --d: 3.7540166342297643s; --delay: 2.545126327371209s; --op: 0.9536987925797029;"></div><div class="star" style="width: 1.32808px; height: 1.32808px; top: 73.7653%; left: 53.4576%; --d: 5.487871910172268s; --delay: 4.096310939628248s; --op: 0.9124044650812677;"></div><div class="star" style="width: 1.3329px; height: 1.3329px; top: 29.9516%; left: 41.3821%; --d: 5.79086053765662s; --delay: 3.4029565333527856s; --op: 0.7384095113019125;"></div><div class="star" style="width: 1.60861px; height: 1.60861px; top: 54.6003%; left: 42.6814%; --d: 6.432563784229603s; --delay: 2.3265051876169367s; --op: 0.9118014769861909;"></div><div class="star" style="width: 1.54523px; height: 1.54523px; top: 55.7649%; left: 67.424%; --d: 6.326097220491471s; --delay: 2.2220127310715316s; --op: 0.647182936746117;"></div><div class="star" style="width: 2.10451px; height: 2.10451px; top: 29.6275%; left: 86.0831%; --d: 3.7531414080071968s; --delay: 4.23288428306141s; --op: 0.9898843897847281;"></div><div class="star" style="width: 2.3204px; height: 2.3204px; top: 80.1909%; left: 42.3705%; --d: 6.326746300419781s; --delay: 1.8989138675358452s; --op: 0.8975581188487054;"></div><div class="star" style="width: 1.72066px; height: 1.72066px; top: 47.9983%; left: 80.2952%; --d: 6.538590365480202s; --delay: 4.6250439854748295s; --op: 0.6496320056618388;"></div><div class="star" style="width: 0.929477px; height: 0.929477px; top: 34.6256%; left: 48.3375%; --d: 3.909613442489694s; --delay: 1.4489971748653074s; --op: 0.7396599950724561;"></div><div class="star" style="width: 1.4633px; height: 1.4633px; top: 92.5368%; left: 1.65146%; --d: 6.466237543606858s; --delay: 1.2631549690300332s; --op: 0.6476012177841213;"></div><div class="star" style="width: 1.04157px; height: 1.04157px; top: 8.25614%; left: 2.73481%; --d: 2.077468221774117s; --delay: 2.5464144595548865s; --op: 0.48529597501724625;"></div><div class="star" style="width: 0.70633px; height: 0.70633px; top: 89.2183%; left: 86.1718%; --d: 5.102531525856357s; --delay: 1.1616811312928788s; --op: 0.8539429464182001;"></div><div class="star" style="width: 1.37864px; height: 1.37864px; top: 26.1648%; left: 19.4025%; --d: 5.592080347531211s; --delay: 2.1686253878062836s; --op: 0.9345318055743855;"></div><div class="star" style="width: 1.46044px; height: 1.46044px; top: 8.7226%; left: 31.4115%; --d: 4.37913623504432s; --delay: 0.06730208656722525s; --op: 0.5344714630137474;"></div><div class="star" style="width: 0.905276px; height: 0.905276px; top: 6.61464%; left: 93.5116%; --d: 5.231709508671999s; --delay: 1.9591341557314874s; --op: 0.7923296386053371;"></div><div class="star" style="width: 0.777334px; height: 0.777334px; top: 17.8825%; left: 31.5182%; --d: 3.9786263870815697s; --delay: 2.677855441539909s; --op: 0.6715031966320335;"></div><div class="star" style="width: 2.31086px; height: 2.31086px; top: 3.72613%; left: 15.4245%; --d: 6.363158821490542s; --delay: 4.164650515150555s; --op: 0.8464828749728528;"></div><div class="star" style="width: 0.814356px; height: 0.814356px; top: 3.4236%; left: 36.7745%; --d: 2.693121547629838s; --delay: 3.4975874917918404s; --op: 0.7625956044163428;"></div><div class="star" style="width: 2.49318px; height: 2.49318px; top: 37.1226%; left: 30.5873%; --d: 6.353231154073105s; --delay: 2.408043638732847s; --op: 0.5295577303836791;"></div><div class="star" style="width: 1.92861px; height: 1.92861px; top: 82.6196%; left: 2.22946%; --d: 6.024231088762851s; --delay: 0.3380797220067294s; --op: 0.9835754153301662;"></div><div class="star" style="width: 1.56141px; height: 1.56141px; top: 36.7968%; left: 64.6242%; --d: 5.983931225350508s; --delay: 0.015704700960835205s; --op: 0.961089822574523;"></div><div class="star" style="width: 1.55153px; height: 1.55153px; top: 44.5362%; left: 88.8804%; --d: 5.9246570354185275s; --delay: 2.8898463760639874s; --op: 0.49418697513012694;"></div><div class="star" style="width: 1.69321px; height: 1.69321px; top: 59.039%; left: 49.1466%; --d: 3.7053905516142414s; --delay: 0.26736510029522376s; --op: 0.4355179975125218;"></div><div class="star" style="width: 2.4164px; height: 2.4164px; top: 15.183%; left: 51.9908%; --d: 3.3137794402915097s; --delay: 1.486423340540839s; --op: 0.5412972164603715;"></div><div class="star" style="width: 0.728925px; height: 0.728925px; top: 1.50342%; left: 2.93068%; --d: 5.663312364584229s; --delay: 1.9445786799669769s; --op: 0.880457278249408;"></div><div class="star" style="width: 1.12105px; height: 1.12105px; top: 67.0647%; left: 23.4833%; --d: 3.8169654409127327s; --delay: 1.025890792560722s; --op: 0.6716758628981259;"></div><div class="star" style="width: 1.75694px; height: 1.75694px; top: 2.22394%; left: 19.3381%; --d: 2.6581647272326974s; --delay: 3.082483312496879s; --op: 0.4842254155624074;"></div><div class="star" style="width: 1.88587px; height: 1.88587px; top: 85.643%; left: 75.303%; --d: 4.430165355575433s; --delay: 4.377773337786714s; --op: 0.6917630364924938;"></div><div class="star" style="width: 2.49161px; height: 2.49161px; top: 81.0264%; left: 46.1364%; --d: 5.634512956707049s; --delay: 3.3847383230927006s; --op: 0.4499360020983294;"></div><div class="star" style="width: 2.25268px; height: 2.25268px; top: 27.4029%; left: 72.8072%; --d: 3.4264958217702937s; --delay: 0.7519581730169922s; --op: 0.8676543653748179;"></div><div class="star" style="width: 1.01481px; height: 1.01481px; top: 3.50482%; left: 73.7259%; --d: 4.694670377083295s; --delay: 2.6605506264436363s; --op: 0.9632487335987686;"></div><div class="star" style="width: 1.97251px; height: 1.97251px; top: 33.2864%; left: 21.8077%; --d: 5.072640720526593s; --delay: 1.5796195561158088s; --op: 0.9405351878691245;"></div><div class="star" style="width: 1.52562px; height: 1.52562px; top: 79.0474%; left: 99.8836%; --d: 2.2919609137750974s; --delay: 3.392064195244297s; --op: 0.6275471851950409;"></div><div class="star" style="width: 0.626672px; height: 0.626672px; top: 52.2004%; left: 22.1146%; --d: 3.2910703339784684s; --delay: 1.2847317994778196s; --op: 0.9491988955737621;"></div><div class="star" style="width: 1.67902px; height: 1.67902px; top: 39.8773%; left: 3.18557%; --d: 4.1294380467863405s; --delay: 3.839464560680021s; --op: 0.809220541046537;"></div><div class="star" style="width: 2.25964px; height: 2.25964px; top: 9.69975%; left: 5.83382%; --d: 6.526368050086767s; --delay: 3.623161837018521s; --op: 0.7266741890574564;"></div><div class="star" style="width: 1.47586px; height: 1.47586px; top: 99.2989%; left: 34.7772%; --d: 3.6049074907740994s; --delay: 1.7313190468076034s; --op: 0.5194743744615902;"></div><div class="star" style="width: 1.82369px; height: 1.82369px; top: 47.7159%; left: 93.0372%; --d: 5.754459815506162s; --delay: 2.4942376153754005s; --op: 0.6699190850424581;"></div><div class="star" style="width: 2.30414px; height: 2.30414px; top: 54.0883%; left: 69.173%; --d: 2.5013781485278033s; --delay: 0.47680054053624077s; --op: 0.44708856904791394;"></div><div class="star" style="width: 1.9679px; height: 1.9679px; top: 98.0371%; left: 88.2686%; --d: 6.954000547154299s; --delay: 2.033252549459008s; --op: 0.48533467371487726;"></div><div class="star" style="width: 1.90816px; height: 1.90816px; top: 28.8204%; left: 62.6113%; --d: 6.886044626823568s; --delay: 0.2706130316945149s; --op: 0.8290672083511812;"></div><div class="star" style="width: 1.60177px; height: 1.60177px; top: 1.44526%; left: 19.5062%; --d: 6.842671589628534s; --delay: 3.907758588744561s; --op: 0.4907028834846241;"></div></div>
+<div class="nebula n1"></div>
+<div class="nebula n2"></div>
+<div class="nebula n3"></div>
+<div class="wrap">
+
+  <!-- TOP -->
+  <div class="screen active" id="screen-top">
+    <span class="rune" style="top:5%;left:8%;font-size:18px;--d:4s;">✦</span>
+    <span class="rune" style="top:12%;right:10%;font-size:14px;--d:5s;">⋆</span>
+    <span class="rune" style="top:28%;left:5%;font-size:12px;--d:6s;">✧</span>
+    <span class="rune" style="top:20%;right:5%;font-size:18px;--d:4.5s;">✦</span>
+    <div class="crystal-wrap">
+      <div class="crystal-ball"></div>
+      <div class="crystal-glow"></div>
+      <div class="crystal-stand"></div>
+    </div>
+    <h1 class="title-main">守護スピリチュアル診断</h1>
+    <p class="title-sub">◇ &nbsp;あなたの魂を導く守護タイプ&nbsp; ◇</p>
+    <div class="glass-card">
+      <p class="intro-text">
+        10の質問に<em>直感</em>で答えるだけで、<br>
+        あなただけのスピリチュアルタイプが判明します。<br><br>
+        <em>エレメント × 星層 × 魂の極性</em><br>
+        3つの軸の組み合わせで導き出される、<br>
+        唯一無二の守護タイプを探しましょう。
+      </p>
+      <div style="text-align:center;margin-top:16px;">
+        <span class="type-count">✦ 全120タイプ ✦</span>
+      </div>
+    </div>
+    <div class="divider"><div class="divider-line"></div><div class="divider-gem">◈</div><div class="divider-line"></div></div>
+    <br>
+    <button class="btn-start" onclick="startQuiz()">✦ &nbsp;診断をはじめる&nbsp; ✦</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="screen" id="screen-quiz">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="q-label" id="q-label">Q 1 / 10</div>
+    <div class="q-card fade-in" id="q-card">
+      <div class="q-icon" id="q-icon"></div>
+      <div class="q-text" id="q-text"></div>
+      <div id="options-wrap"></div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="screen" id="screen-result">
+    <div class="result-crystal" id="r-crystal"></div>
+    <div class="result-badge">✦ あなたの守護タイプ ✦</div>
+    <div class="result-name" id="r-name"></div>
+    <div class="result-fullname" id="r-fullname"></div>
+    <div class="type-id-badge">
+      <span class="type-id-label">TYPE</span>
+      <span class="type-id-value" id="r-typeid"></span>
+    </div>
+    <div class="axis-row">
+      <div class="axis-card"><div class="axis-icon" id="r-e-icon"></div><div class="axis-label">エレメント</div><div class="axis-value" id="r-e-name"></div></div>
+      <div class="axis-card"><div class="axis-icon">⭐</div><div class="axis-label">星層</div><div class="axis-value" id="r-s-name"></div></div>
+      <div class="axis-card"><div class="axis-icon">🔮</div><div class="axis-label">魂の極性</div><div class="axis-value" id="r-p-name"></div></div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-icon">🎨</div><div class="stat-label">ラッキーカラー</div><div class="stat-value" id="r-color"></div></div>
+      <div class="stat-card"><div class="stat-icon">💎</div><div class="stat-label">守護石</div><div class="stat-value" id="r-stone"></div></div>
+      <div class="stat-card"><div class="stat-icon">🌙</div><div class="stat-label">相性の星座</div><div class="stat-value" id="r-sign"></div></div>
+      <div class="stat-card"><div class="stat-icon">✨</div><div class="stat-label">魂のキーワード</div><div class="stat-value" id="r-keyword"></div></div>
+    </div>
+    <div class="result-desc">
+      <div class="result-desc-title">◈ タイプの説明</div>
+      <div id="r-desc"></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-label">✨ 今日の宇宙からのメッセージ</div>
+      <div class="msg-text" id="r-msg"></div>
+    </div>
+    <button class="btn-retry" onclick="retryQuiz()">◈ &nbsp;もう一度診断する</button>
+  </div>
+
+  <div class="footer">守護スピリチュアル診断 © 2026</div>
+</div>
+
+<script>
+// ─── Stars ───────────────────────────────────
+const sb=document.getElementById('stars-bg');
+for(let i=0;i<120;i++){
+  const s=document.createElement('div');s.className='star';
+  const z=Math.random()*2+.5;
+  s.style.cssText=`width:${z}px;height:${z}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*5}s;--delay:${Math.random()*5}s;--op:${.4+Math.random()*.6};`;
+  sb.appendChild(s);
+}
+
+// ─── Data: 3 Axes ────────────────────────────
+const ELEMENTS=[
+  {id:'earth',name:'アース',label:'大地',icon:'🌿',c1:'#14532d',c2:'#0a2914',glow:'rgba(34,197,94,.5)',glow2:'rgba(74,222,128,.15)',color:'深緑・アースブラウン',stone:'モスアゲート',
+   desc_base:'大地のエネルギーを根幹に持つあなたは、安定・忍耐・包容力に満ちています。'},
+  {id:'fire',name:'ファイア',label:'炎',icon:'🔥',c1:'#7c2d12',c2:'#431407',glow:'rgba(249,115,22,.6)',glow2:'rgba(251,191,36,.2)',color:'情熱レッド・ゴールド',stone:'ルビー',
+   desc_base:'炎のエネルギーを根幹に持つあなたは、情熱・行動力・意志の強さで周囲を照らします。'},
+  {id:'water',name:'ウォーター',label:'水',icon:'🌊',c1:'#1e3a5f',c2:'#0a192f',glow:'rgba(96,165,250,.55)',glow2:'rgba(167,139,250,.2)',color:'ディープブルー・神秘の紫',stone:'アクアマリン',
+   desc_base:'水のエネルギーを根幹に持つあなたは、深い感受性・共感力・直感を宿しています。'},
+  {id:'air',name:'エア',label:'風',icon:'💨',c1:'#164e63',c2:'#0f2940',glow:'rgba(103,232,249,.5)',glow2:'rgba(167,139,250,.15)',color:'スカイブルー・シルバー',stone:'クリアクォーツ',
+   desc_base:'風のエネルギーを根幹に持つあなたは、自由・知性・柔軟な発想力にあふれています。'},
+];
+
+const STARS=[
+  {id:'nova',name:'ノヴァ',sub:'誕生の星',sign:'牡羊座・獅子座',trait:'創造と始まりのエネルギーを宿し',msg_theme:'新しいものを生み出すこと'},
+  {id:'luna',name:'ルナ',sub:'月の星',sign:'蟹座・魚座',trait:'月の満ち欠けのように深い感性を持ち',msg_theme:'内なる声に従うこと'},
+  {id:'solaris',name:'ソラリス',sub:'太陽の星',sign:'獅子座・射手座',trait:'太陽のように光り輝く使命を帯び',msg_theme:'自分を輝かせること'},
+  {id:'aether',name:'アイテル',sub:'天空の星',sign:'双子座・水瓶座',trait:'天空の知性と自由を司り',msg_theme:'境界を越えて探求すること'},
+  {id:'umbra',name:'ウンブラ',sub:'影の星',sign:'蠍座・山羊座',trait:'深淵の知恵と変容の力を持ち',msg_theme:'変化を恐れず進むこと'},
+];
+
+const POLARITIES=[
+  {id:'guardian',name:'守護者',keyword:'守護・庇護',suffix:'守り導く者として、周囲に安らぎと安心をもたらします。',
+   msgs:['今日、大切な誰かのために一歩踏み出しましょう。あなたの存在が光になります。','あなたが守るものを、今日改めて思い浮かべてみてください。その絆が力の源です。']},
+  {id:'seeker',name:'探求者',keyword:'探求・洞察',suffix:'真実を追い求め、魂の深みへと潜り込んでいきます。',
+   msgs:['今日は疑問を持つことを恐れないで。知ろうとする心が宇宙を動かします。','答えは遠くにあるのではなく、あなたの内側に眠っています。静かに耳を傾けて。']},
+  {id:'creator',name:'創造者',keyword:'創造・表現',suffix:'無から有を生み出す力を持ち、世界に独自の色を加えます。',
+   msgs:['今日は何かを作りましょう。小さなものでも、あなたの魂が宿ります。','あなたの創造力は宇宙からの贈り物。今日それを解き放つ時です。']},
+  {id:'healer',name:'癒し手',keyword:'癒し・共鳴',suffix:'傷ついた魂に寄り添い、光へと導く使命があります。',
+   msgs:['今日あなたの言葉は、誰かの傷を癒すでしょう。優しさを惜しみなく。','まず自分を癒してください。満たされた心からこそ、真の癒しが生まれます。']},
+  {id:'wanderer',name:'放浪者',keyword:'自由・変革',suffix:'自由に境界を越え、新たな地平を切り開きます。',
+   msgs:['今日は慣れ親しんだ道を外れてみましょう。予想外の景色があなたを待っています。','あなたの魂は広い空を求めています。今日、翼を広げる一歩を踏み出して。']},
+  {id:'sage',name:'賢者',keyword:'知恵・照覧',suffix:'時を超えた知恵を宿し、静かに世界を照らします。',
+   msgs:['あなたの言葉には重みがあります。今日その言葉を、必要な人へ届けましょう。','静寂の中にこそ、真の知恵は宿ります。今日は少し立ち止まって、宇宙の声を聞いて。']},
+];
+
+// ─── Questions: 10問、各4択 ─────────────────
+// 各選択肢は [element_pts, star_pts, polarity_pts] の加算ルール
+// element 0=earth,1=fire,2=water,3=air (各選択肢がどのelementを示すか)
+// star    0=nova,1=luna,2=solaris,3=aether,4=umbra
+// polarity 0=guardian,1=seeker,2=creator,3=healer,4=wanderer,5=sage
+
+const questions=[
+  {icon:'🌙',text:'朝目覚めたとき、最初に感じるのは？',
+   opts:['静かな安らぎ','燃えるような意欲','ふわっとした夢の余韻','清々しい風のような爽快感'],
+   e:[0,1,2,3], s:[1,0,1,3], p:[0,0,1,4]},
+  {icon:'🌲',text:'直感的に惹かれる自然の風景は？',
+   opts:['深い森や苔むした場所','夕焼けに染まる砂漠','満月が映る湖面','断崖に打ちつける荒波'],
+   e:[0,1,2,3], s:[4,2,1,0], p:[0,2,3,4]},
+  {icon:'💧',text:'落ち込んだとき、あなたがすることは？',
+   opts:['一人で静かに過ごす','体を動かして発散する','音楽や映画に浸る','誰かと話して気持ちを整理する'],
+   e:[0,1,2,3], s:[4,2,1,3], p:[5,0,3,3]},
+  {icon:'⭐',text:'あなたが最も大切にしている感覚は？',
+   opts:['安心・安定','情熱・活力','感受性・繊細さ','自由・軽やかさ'],
+   e:[0,1,2,3], s:[1,2,1,3], p:[0,0,2,4]},
+  {icon:'🔮',text:'パワースポットに行くなら どこに惹かれる？',
+   opts:['神秘的な洞窟や泉','壮大な山の頂上','風が心地いい海辺','星がよく見える高原'],
+   e:[2,0,3,1], s:[4,2,0,3], p:[1,5,4,2]},
+  {icon:'🌈',text:'夢の中でよく見る色は？',
+   opts:['深い緑や大地の茶色','燃えるような赤やオレンジ','深い青や神秘的な紫','澄んだ白や水色'],
+   e:[0,1,2,3], s:[4,2,4,3], p:[0,0,3,1]},
+  {icon:'✨',text:'あなたの強みだと思うのは？',
+   opts:['包容力と忍耐','行動力と意志の強さ','共感力と豊かな想像力','柔軟性と革新的な発想力'],
+   e:[0,1,2,3], s:[1,2,1,3], p:[0,0,2,4]},
+  {icon:'🌸',text:'理想の休日の過ごし方は？',
+   opts:['庭や公園でゆっくり過ごす','アクティブに体を動かす','アート・音楽に浸る','旅や散歩で風を感じる'],
+   e:[0,1,2,3], s:[1,2,0,3], p:[3,0,2,4]},
+  {icon:'💬',text:'人に言われて嬉しかった言葉は？',
+   opts:['「あなたといると安心する」','「頼もしくて心強い」','「感性がとても豊か」','「一緒にいると楽しい！」'],
+   e:[0,1,2,3], s:[1,2,0,3], p:[0,0,2,4]},
+  {icon:'🌌',text:'あなたの人生のテーマに近いのは？',
+   opts:['根を張り、育てること','燃やし、切り拓くこと','感じ、深くつながること','流れ、変化し続けること'],
+   e:[0,1,2,3], s:[4,2,1,3], p:[0,0,3,4]},
+];
+
+// ─── State ───────────────────────────────────
+let esc=[0,0,0,0], ssc=[0,0,0,0,0], psc=[0,0,0,0,0,0];
+let cur=0;
+
+// ─── Start ───────────────────────────────────
+function startQuiz(){
+  esc=[0,0,0,0];ssc=[0,0,0,0,0];psc=[0,0,0,0,0,0];cur=0;
+  show('screen-quiz');renderQ();
+}
+
+function renderQ(){
+  const q=questions[cur];
+  document.getElementById('q-label').textContent=`Q ${cur+1} / ${questions.length}`;
+  document.getElementById('progress-fill').style.width=`${(cur/questions.length)*100}%`;
+  document.getElementById('q-icon').textContent=q.icon;
+  document.getElementById('q-text').textContent=q.text;
+  const wrap=document.getElementById('options-wrap');wrap.innerHTML='';
+  const gems=['◆','◇','◈','✦'];
+  q.opts.forEach((opt,i)=>{
+    const btn=document.createElement('button');btn.className='opt-btn';
+    btn.innerHTML=`<span class="opt-gem">${gems[i]}</span><span class="opt-text">${opt}</span>`;
+    btn.onclick=()=>pick(q,i);
+    wrap.appendChild(btn);
+  });
+  const card=document.getElementById('q-card');
+  card.classList.remove('fade-in');void card.offsetWidth;card.classList.add('fade-in');
+}
+
+function pick(q,i){
+  esc[q.e[i]]++;
+  ssc[q.s[i]]++;
+  psc[q.p[i]]++;
+  cur++;
+  if(cur>=questions.length)showResult();
+  else renderQ();
+}
+
+// ─── Result ──────────────────────────────────
+function showResult(){
+  document.getElementById('progress-fill').style.width='100%';
+
+  const ei=esc.indexOf(Math.max(...esc));
+  const si=ssc.indexOf(Math.max(...ssc));
+  const pi=psc.indexOf(Math.max(...psc));
+
+  const E=ELEMENTS[ei];
+  const S=STARS[si];
+  const P=POLARITIES[pi];
+
+  // crystal color
+  const rc=document.getElementById('r-crystal');
+  rc.textContent=E.icon;
+  rc.style.setProperty('--c1',E.c1);
+  rc.style.setProperty('--c2',E.c2);
+  rc.style.setProperty('--glow',E.glow);
+  rc.style.setProperty('--glow2',E.glow2);
+
+  // type id
+  const typeNum = ei*30 + si*6 + pi + 1;
+  const typeId = `${E.id.toUpperCase()}-${S.id.toUpperCase()}-${P.id.toUpperCase()}`;
+  document.getElementById('r-typeid').textContent=`No.${String(typeNum).padStart(3,'0')} / ${typeId}`;
+
+  // names
+  document.getElementById('r-name').textContent=`${S.name}の${P.name}`;
+  document.getElementById('r-fullname').textContent=`${E.label}の守護を受けし ${S.sub}の${P.name}`;
+
+  // axis
+  document.getElementById('r-e-icon').textContent=E.icon;
+  document.getElementById('r-e-name').textContent=E.name;
+  document.getElementById('r-s-name').textContent=S.name;
+  document.getElementById('r-p-name').textContent=P.name;
+
+  // stats
+  document.getElementById('r-color').textContent=E.color;
+  document.getElementById('r-stone').textContent=E.stone;
+  document.getElementById('r-sign').textContent=S.sign;
+  document.getElementById('r-keyword').textContent=P.keyword;
+
+  // desc
+  const desc=`${E.desc_base}${S.trait}、${P.suffix}`;
+  document.getElementById('r-desc').textContent=desc;
+
+  // msg
+  const msgs=P.msgs;
+  const msg=msgs[Math.floor(Math.random()*msgs.length)];
+  document.getElementById('r-msg').textContent=msg;
+
+  show('screen-result');
+}
+
+function retryQuiz(){show('screen-top');}
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+
+
+</body></html>
